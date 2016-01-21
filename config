@@ -26,7 +26,7 @@ font pango:Iosevka 10
 # font, it doesn’t scale on retina/hidpi displays.
 
 # Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+floating_modifier Mod1
 
 # start a terminal
 bindcode $mod+36 exec xfce4-terminal
@@ -148,6 +148,9 @@ bindsym Control+2 exec /usr/bin/setxkbmap ru
 # Move workspace to other monotor.
 bindsym $mod+m move workspace to output left
 
+# Xfce4-terminal drop-down
+
+bindsym Control+t exec /usr/bin/xfce4-terminal --drop-down
 
 ##############################################################################
 
@@ -158,12 +161,19 @@ bindcode $mod+27 mode "resize"
 bar {
         status_command i3status  --config ~/.i3/i3status.conf
         tray_output primary
+	
 	colors{
 		statusline #ffffff
 		background #303030
 		separator  #ffffff
 		}
+		
+# mode dock|hide|invisible
+mode dock
+hidden_state hide
+modifier Mod1
 
+# separator_symbol ":|:"
 
 }
 
