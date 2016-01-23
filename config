@@ -36,7 +36,7 @@ bindcode $mod+Shift+24 kill
 
 # start dmenu (a program launcher)
 # bindcode $mod+40 exec  dmenu_run -fn 'Droid Sans Mono-11' -b -dim 0 -l 10 -o 0.0
-bindsym $mod+d exec --no-startup-id rofi -font "Ubuntu Mono 12" -show run -bg "#303030" -fg "#f8f8f2" -bc "#272822"
+bindsym $mod+d exec --no-startup-id rofi -font "Iosevka 12" -show run -bg "#303030" -fg "#f8f8f2" -bc "#272822" -opacity "100"
 
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
@@ -149,8 +149,16 @@ bindsym Control+2 exec /usr/bin/setxkbmap ru
 bindsym $mod+m move workspace to output left
 
 # Xfce4-terminal drop-down
-
 bindsym Control+t exec /usr/bin/xfce4-terminal --drop-down
+
+# Reboobt and shutdown
+bindsym $mod+Control+r exec /usr/bin/systemctl reboot
+bindsym $mod+Control+h exec /usr/bin/systemctl poweroff
+
+# Volume controll
+bindsym $mod+F11 exec amixer -c 0 set Master 1dB-
+bindsym $mod+F12 exec amixer -c 0 set Master 1dB+
+
 
 ##############################################################################
 
