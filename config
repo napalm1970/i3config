@@ -100,6 +100,7 @@ bindcode $mod+11 workspace web
 bindcode $mod+12 workspace dev
 bindcode $mod+13 workspace other
 bindcode $mod+14 workspace media
+bindcode $mod+15 workspace hdmi
 
 # move focused container to workspace
 bindcode $mod+Shift+10 move container to workspace term
@@ -107,6 +108,7 @@ bindcode $mod+Shift+11 move container to workspace web
 bindcode $mod+Shift+12 move container to workspace dev
 bindcode $mod+Shift+13 move container to workspace other
 bindcode $mod+Shift+14 move container to workspace media
+bindcode $mod+Shift+15 move container to workspace hdmi
 
 # reload the configuration file
 bindcode $mod+Shift+54 reload
@@ -188,3 +190,22 @@ modifier Mod1
 
 # Focus_follows_mouse yes|no
 focus_follows_mouse no
+
+# Programm workspaces
+assign		[class="^qBittorrent"] → media
+assign 		[class="^Firefox"]     → web
+assign 		[class="^Emacs"]       → dev
+
+for_window 	[class="^qBittorrent"]		border pixel 1
+for_window 	[class="^Xfce4-terminal"] 	border pixel 1
+for_window 	[class="^Emacs"] 		border pixel 1
+for_window 	[class="^Firefox"] 		border pixel 1
+
+
+# Workspace in screen.
+workspace term		output	DVI-I-0
+workspace web  		output 	DVI-I-0
+workspace dev 		output 	DVI-I-0
+workspace other 	output 	DVI-I-0
+workspace media	 	output 	DVI-I-0
+workspace hdmi 		output 	HDMI-0
